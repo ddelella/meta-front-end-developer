@@ -1,13 +1,62 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --primary-green: #495E57;
+  --primary-yellow: #F4CE14;
+  --secondary-red: #EE9972;
+  --secondary-peach: #FBDABB;
+  --highlight-light: #EDEFEE;
+  --highlight-dark: #333333;
+
+  --primary-font-family: "Markazi Text", serif;
+  --secondary-font-family: "Karla", serif;
+
+  --header-height: 75px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Title */
+h1 {
+  font-family: var(--primary-font-family);
+  font-weight: 500;
+  font-size: 64pt;
+}
+
+/* Sub Title */
+h2 {
+  font-family: var(--primary-font-family);
+  font-weight: 500;
+  font-size: 40pt;
+}
+
+/* Section Title */
+h3 { 
+  font-family: var(--secondary-font-family);
+  font-weight: 800;
+  font-size: 20pt;
+  text-transform: uppercase;
+}
+
+/* Section Categories */
+h4 { 
+  font-family: var(--secondary-font-family);
+  font-weight: 800;
+  font-size: 16pt;
+}
+
+/* Card Title */
+h5 { 
+  font-family: var(--secondary-font-family);
+  font-weight: 700;
+  font-size: 18pt;
+}
+
+/* Lead Text */
+h6 { 
+  font-family: var(--secondary-font-family);
+  font-weight: 500;
+  font-size: 18pt;
+}
+
+p {
+  font-family: var(--secondary-font-family);
+  font-size: 16pt;
+  line-height: 1.5em;
 }

@@ -1,0 +1,5 @@
+main > section:nth-of-type(even) {
+  background-color: var(--primary-green);
+  padding: 1em;
+}
+

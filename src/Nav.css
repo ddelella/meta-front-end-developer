@@ -1,0 +1,26 @@
+nav {
+  line-height: var(--header-height);
+  vertical-align: middle;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav ul li {
+  display: inline;
+  padding: 5px 10px;
+}
+
+nav ul li h4 {
+  display: inline;
+}
+
+nav ul li h4 a {
+  color: var(--primary-green);
+  text-decoration: none;
+}
+
+nav ul li h4 a:hover {
+  text-decoration: underline;
+}
