@@ -1,3 +1,18 @@
-#specials {
-    background-color: white;
+#specials-list {
+    flex-basis: 33.333333%;
+}
+
+.special {
+    width: 30%;
+    border-radius: var(--default-border-radius);
+}
+
+.special img {
+    height: 175px;
+    border-top-left-radius: var(--default-border-radius);
+    border-top-right-radius: var(--default-border-radius);
+}
+
+.special .price {
+    color: var(--secondary-red);
 }

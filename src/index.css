@@ -10,20 +10,21 @@
   --secondary-font-family: "Karla", serif;
 
   --header-height: 60px;
+  --default-border-radius: 16px;
 }
 
 /* Title */
 h1 {
   font-family: var(--primary-font-family);
   font-weight: 500;
-  font-size: 64pt;
+  font-size: 48pt;
 }
 
 /* Sub Title */
 h2 {
   font-family: var(--primary-font-family);
   font-weight: 500;
-  font-size: 40pt;
+  font-size: 24pt;
 }
 
 /* Section Title */
@@ -45,22 +46,39 @@ h4 {
 h5 { 
   font-family: var(--secondary-font-family);
   font-weight: 700;
-  font-size: 18pt;
+  font-size: 16pt;
 }
 
 /* Lead Text */
 h6 { 
   font-family: var(--secondary-font-family);
   font-weight: 500;
-  font-size: 18pt;
+  font-size: 14pt;
 }
 
 p {
   font-family: var(--secondary-font-family);
-  font-size: 16pt;
+  font-size: 12pt;
   line-height: 1.5em;
 }
 
 body {
   margin-top: var(--header-height);
+}
+
+section {
+  padding: 1.5rem;
+}
+
+.btn-primary {
+  background-color: var(--primary-yellow);
+  color: var(--highlight-dark);
+  border-radius: var(--default-border-radius);
+  padding: 0.5rem 2rem;
+  border: none;
+}
+
+.btn-primary:hover {  
+  background-color: var(--secondary-peach);
+  color: var(--highlight-dark);
 }

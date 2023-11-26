@@ -8,14 +8,14 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Header/>
       <Routes>
           <Route path="/" element={<Homepage/>}/>
           <Route path="/about" element={<About/>}/>
       </Routes>
       <Footer/>
-    </div>
+    </>
   );
 }
 

@@ -1,3 +1,19 @@
-#testimonials {
-    background-color: var(--primary-green);
+#testimonials h1 {
+    color: var(--primary-yellow);
+}
+
+#testimonials-list {
+    flex-basis: 25%;
+}
+
+.testimonial {
+    width: 20%;
+    border: 1px solid var(--highlight-dark);
+    border-radius: var(--default-border-radius);
+    background-color: var(--highlight-light);
+}
+
+.testimonial img {
+    height: 75px;
+    width: 75px;
 }

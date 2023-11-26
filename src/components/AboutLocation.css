@@ -1,0 +1,12 @@
+#about-location h1 {
+    color: var(--primary-green);
+    line-height: 1;
+}
+
+#about-location h2 {
+    line-height: 1;
+}
+
+#about-location img {
+    height: 300px;
+}

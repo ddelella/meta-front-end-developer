@@ -1,5 +1,4 @@
-main > section:nth-of-type(even) {
+main > section:nth-of-type(odd) {
   background-color: var(--primary-green);
-  padding: 1em;
 }
 
