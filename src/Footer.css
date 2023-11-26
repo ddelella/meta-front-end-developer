@@ -1,0 +1,17 @@
+footer {
+  background-color: var(--primary-green);
+}
+
+footer h4 {
+  color: white;
+  margin-left: 0;
+}
+
+footer p {
+  font-size: 12pt;
+  color: white;
+}
+
+footer a {
+  color: white;
+}

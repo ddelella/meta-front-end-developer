@@ -4,14 +4,14 @@ import './Nav.css';
 
 function Nav() {
   return (
-    <nav id="nav">
+    <nav>
       <ul>
-        <li><h4><Link to="/">Home</Link></h4></li>
-        <li><h4><Link to="/about">About</Link></h4></li>
-        <li><h4><Link to="/menu">Menu</Link></h4></li>
-        <li><h4><Link to="/reservations">Reservations</Link></h4></li>
-        <li><h4><Link to="/order">Order Online</Link></h4></li>
-        <li><h4><Link to="/login">Login</Link></h4></li>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/about">About</Link></li>
+        <li><Link to="/menu">Menu</Link></li>
+        <li><Link to="/reservations">Reservations</Link></li>
+        <li><Link to="/order">Order Online</Link></li>
+        <li><Link to="/login">Login</Link></li>
       </ul>
     </nav>
   );

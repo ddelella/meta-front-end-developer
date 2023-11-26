@@ -9,7 +9,7 @@
   --primary-font-family: "Markazi Text", serif;
   --secondary-font-family: "Karla", serif;
 
-  --header-height: 75px;
+  --header-height: 60px;
 }
 
 /* Title */
@@ -59,4 +59,8 @@ p {
   font-family: var(--secondary-font-family);
   font-size: 16pt;
   line-height: 1.5em;
+}
+
+body {
+  margin-top: var(--header-height);
 }

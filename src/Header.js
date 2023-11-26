@@ -4,7 +4,7 @@ import Nav from './Nav';
 
 function Header() {
   return (
-    <header id="header" className="container-fluid">
+    <header id="header" className="container-fluid fixed-top">
       <div className="row">
         <div className="col-xxl-5 col-lg-4 text-center">
           <img src="/images/wide-logo.png" alt="Little Lemon"/>
