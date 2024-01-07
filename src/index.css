@@ -9,7 +9,8 @@
   --primary-font-family: "Markazi Text", serif;
   --secondary-font-family: "Karla", serif;
 
-  --header-height: 60px;
+  --header-height: 60px;  
+  --body-top-margin: 75px;
   --default-border-radius: 16px;
 }
 
@@ -63,7 +64,8 @@ p {
 }
 
 body {
-  margin-top: var(--header-height);
+  margin-top: var(--body-top-margin);
+  height: 100%;
 }
 
 section {

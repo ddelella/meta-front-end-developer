@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import './Specials.css';
 
 function Special(props) {
@@ -54,7 +56,7 @@ function Specials() {
           <h1>Specials</h1>
         </div>
         <div className="col-6 text-end align-bottom">
-          <button className="btn btn-primary">Online Menu</button>
+          <Link to="/menu" className="btn btn-primary">Online Menu</Link>
         </div>
       </div>
       <div id="specials-list" className="d-flex justify-content-between flex-wrap">
