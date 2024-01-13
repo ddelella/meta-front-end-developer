@@ -2,17 +2,31 @@ import { useState } from "react"
 
 import './BookingForm.css';
 
-function BookingForm({availableTimes, onDateChange, onSubmit}) {
-  const [reservationDate, setReservationDate] = useState(new Date().toISOString().split('T')[0]);
-  const [reservationTime, setReservationTime] = useState();
-  const [numberOfGuests, setNumberOfGuests] = useState(1);
-  const [occasion, setOccasion] = useState("None");
-
+function BookingForm({availableTimes, onDateChange, onFormSubmit}) {
   const availableOccasions = [
-    "None",
     "Birthday",
     "Anniversary"
   ];
+
+  const today = new Date().toISOString().split('T')[0];
+  const maximumDate = new Date(Date.now() + 180 * 24*60*60*1000).toISOString().split('T')[0];
+
+  const [formData, setFormData] = useState({
+    reservationDate: today,
+    reservationTime: "",
+    numberOfGuests: 1,
+    occasion: "None",
+  });
+
+  const handleInputChange = (e) => {
+    if (e.target.name === 'reservationDate') {
+      onDateChange(e.target.value);
+    }
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   return (
     <main className="container" aria-label="Make a Reservation">
@@ -22,39 +36,32 @@ function BookingForm({availableTimes, onDateChange, onSubmit}) {
           <p>Fill out the form below and submit to secure a reservation at the restaurant. You must select a date/time as well as the number of guests.</p>
         </div>
       </div>
-      <form name="makeAReservationForm" onSubmit={onSubmit} className="needs-validation">
+      <form name="makeAReservationForm" id="makeAReservationForm"
+        className="needs-validation"
+        onSubmit={(e) => onFormSubmit(e, formData)}
+        noValidate>
         <div className="row mb-3">
           <div className="col">
             <label htmlFor="reservationDate" className="form-label">Select a Date:</label>
             <input id="reservationDate" name="reservationDate" data-testid="reservationDate"
               type="date"
               className="form-control"
-              value={reservationDate}
-              aria-label="Reservation Date"
+              min={today}
+              max={maximumDate}
               required
-              onChange={(e) => {
-                setReservationDate(e.target.value);
-                onDateChange({
-                  type: 'change',
-                  parameters: {
-                    previousDate: reservationDate,
-                    newDate: e.target.value
-                  }
-                });
-              }}/>
-              <div className="invalid-feedback">Please select a valid date</div>
+              value={formData.reservationDate}
+              aria-label="Reservation Date"
+              onChange={handleInputChange}/>
           </div>
           <div className="col">
             <label htmlFor="reservationTime" className="form-label">Select a Time:</label>
             <select id="reservationTime" name="reservationTime" data-testid="reservationTime"
               className="form-select"
-              value={reservationTime}
-              aria-label="Reservation Time"
               required
-              onChange={(e) => {
-                setReservationTime(e.target.value);
-              }}>
-                <option>Select a Time</option>
+              value={formData.reservationTime}
+              aria-label="Reservation Time"
+              onChange={handleInputChange}>
+                <option disabled value="">Select a Time</option>
                 {availableTimes?.map(item => (
                   <option key={item} value={item}>
                     {item}
@@ -73,27 +80,23 @@ function BookingForm({availableTimes, onDateChange, onSubmit}) {
               placeholder="1"
               min="1"
               max="10"
-              value={numberOfGuests}
+              value={formData.numberOfGuests}
               aria-label="Number of Guests"
-              onChange={(e) => {
-                setNumberOfGuests(e.target.value);
-              }}/>
-              <div className="invalid-feedback">Number of guest must be between 1 and 10</div>
+              onChange={handleInputChange}/>
           </div>
           <div className="col">
             <label htmlFor="occasion" className="form-label">Occasion</label>
             <select id="occasion" name="occasion" data-testid="occasion"
               className="form-control"
-              value={occasion}
+              value={formData.occasion}
               aria-label="Occasion"
-              onChange={(e) => {
-                setOccasion(e.target.value);
-              }}>
-              {availableOccasions.map(item => (
-                <option key={item} value={item}>
-                  {item}
-                </option>
-              ))}
+              onChange={handleInputChange}>
+                <option value="None">None</option>
+                {availableOccasions.map(item => (
+                  <option key={item} value={item}>
+                    {item}
+                  </option>
+                ))}
             </select>
           </div>
         </div>

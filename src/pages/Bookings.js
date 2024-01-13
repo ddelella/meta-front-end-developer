@@ -6,7 +6,7 @@ import BookingForm from '../components/BookingForm';
 function Bookings() {
   const navigate = useNavigate();
 
-  // The following two functions are used to replace the broken link to api.js provided in the 
+  // The following two functions are used to replace the broken link to api.js provided in the
   // Week 3 documentation.
 
   const seededGenerator = (date, hour) => {
@@ -31,14 +31,21 @@ function Bookings() {
   }
 
   function updateTimes(state, action) {
-    return state;
+    return fetchAPI(new Date(action));
   }
 
   const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes());
 
-  function submitForm(e) {
+  const submitForm = (e, formData) => {
+    const form = document.getElementById('makeAReservationForm');
+    form.classList.add('was-validated')
+
+    if (form.checkValidity()) {
+      navigate("/reservations/confirmation");
+    }
+
     e.preventDefault();
-    navigate("/reservations/confirmation");
+    e.stopPropagation();
   }
 
   return (
@@ -46,7 +53,7 @@ function Bookings() {
       <BookingForm
         availableTimes={availableTimes}
         onDateChange={dispatch}
-        onSubmit={submitForm}>
+        onFormSubmit={submitForm}>
       </BookingForm>
     </main>
   );
