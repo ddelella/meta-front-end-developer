@@ -1,17 +1,32 @@
 footer {
+  color: white;
   background-color: var(--primary-green);
 }
 
 footer h4 {
-  color: white;
   margin-left: 0;
 }
 
 footer p {
   font-size: 12pt;
-  color: white;
 }
 
 footer a {
   color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+#footer {
+  flex-direction: row;
+}
+
+@media (max-width: 767.98px) {
+  #footer {
+      flex-direction: column;
+  }
+  
 }

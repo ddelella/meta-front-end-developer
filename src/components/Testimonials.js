@@ -1,25 +1,6 @@
-import './Testimonials.css';
+import Testimonial from './Testimonial';
 
-function Testimonial(props) {
-  return (
-    <article className="testimonial container-fluid p-3">
-      <div className="row">
-        <div className="col-4">
-          <img src={props.image} alt={props.imageAlt}/>
-        </div>
-        <div className="col-8">
-          <h4 className="m-0 p-0">{props.name}</h4>
-          Rating: {props.rating}
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-12">
-          {props.text}
-        </div>
-      </div>
-    </article>
-  );
-}
+import './Testimonials.css';
 
 function Testimonials() {
   const data = [
@@ -54,14 +35,16 @@ function Testimonials() {
   ];
 
   return (
-    <section id="testimonials" className="container-fluid pb-3">
-      <div className="row">
-        <div className="col-12 text-center">
-          <h1>Testimonials</h1>
+    <section id="testimonials">
+      <div className="container">
+        <div className="row">
+          <div className="col text-center">
+            <h1>Testimonials</h1>
+          </div>
         </div>
-      </div>
-      <div id="testimonials-list" className="d-flex justify-content-between flex-wrap">
-        {data.map((testimonial) => <Testimonial rating={testimonial.rating} name={testimonial.name} image={testimonial.image} imageAlt={testimonial.imageAlt} text={testimonial.text}/>)}
+        <div id="testimonials-list" className="d-flex flex-wrap gap-3 align-items-flex align-content-center">
+          {data.map((testimonial) => <Testimonial rating={testimonial.rating} name={testimonial.name} image={testimonial.image} imageAlt={testimonial.imageAlt} text={testimonial.text}/>)}
+        </div>
       </div>
     </section>
   );

@@ -3,17 +3,11 @@
 }
 
 #testimonials-list {
-    flex-basis: 25%;
+    justify-content: space-between;
 }
 
-.testimonial {
-    width: 20%;
-    border: 1px solid var(--highlight-dark);
-    border-radius: var(--default-border-radius);
-    background-color: var(--highlight-light);
-}
-
-.testimonial img {
-    height: 75px;
-    width: 75px;
+@media (max-width: 767.98px) {
+    #testimonials-list {
+        justify-content: center;
+    }
 }

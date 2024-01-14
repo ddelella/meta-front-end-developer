@@ -14,7 +14,7 @@ function App() {
       <Routes>
           <Route path="/" element={<Homepage/>}/>
           <Route path="/reservations" element={<Bookings/>}/>
-          <Route path="/reservations/confirmation" element={<ConfirmedBooking confirmationMessage={"Booking Confirmed"}/>}/>
+          <Route path="/reservations/confirmation" element={<ConfirmedBooking confirmationTitle="Thank You!" confirmationMessage="We have confirmed your reservation."/>}/>
       </Routes>
       <Footer/>
     </>
