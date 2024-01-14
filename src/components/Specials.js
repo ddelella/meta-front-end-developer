@@ -1,28 +1,7 @@
 import { Link } from "react-router-dom";
+import Special from './Special';
 
 import './Specials.css';
-
-function Special(props) {
-  return (
-    <article className="card special">
-      <img src={props.image} className="card-img-top" alt={props.imageAlt}/>
-      <div className="card-body">
-        <div className="row">
-          <div className="col-9">
-            <h5 className="card-title">{props.title}</h5>
-          </div>
-          <div className="col-3 price">
-            {props.price}
-          </div>
-        </div>
-        <p className="card-text">{props.text}</p>
-      </div>
-      <div className="card-footer fw-bold">
-        Order a delivery <i className="fa-solid fa-truck"></i>
-      </div>
-    </article>
-  );
-}
 
 function Specials() {
   const data = [
@@ -50,17 +29,21 @@ function Specials() {
   ];
 
   return (
-    <section id="specials" className="container-fluid">
-      <div className="row align-middle">
-        <div className="col-6">
-          <h1>Specials</h1>
+    <section id="specials">
+      <div className="container">
+        <div className="d-flex justify-content-between align-items-center">
+            <div>
+              <h1>Specials</h1>
+            </div>
+            <div>
+              <Link to="/menu" className="btn btn-primary">Online Menu</Link>
+            </div>
         </div>
-        <div className="col-6 text-end align-bottom">
-          <Link to="/menu" className="btn btn-primary">Online Menu</Link>
+        <div id="specials-list" className="d-flex flex-wrap gap-3 align-items-flex align-content-center">
+          {data.map((special) =>
+            <Special title={special.title} price={special.price} image={special.image} imageAlt={special.imageAlt} text={special.text}/>
+          )}
         </div>
-      </div>
-      <div id="specials-list" className="d-flex justify-content-between flex-wrap">
-        {data.map((special) => <Special title={special.title} price={special.price} image={special.image} imageAlt={special.imageAlt} text={special.text}/>)}
       </div>
     </section>
   );

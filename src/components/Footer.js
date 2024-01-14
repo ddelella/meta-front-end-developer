@@ -1,5 +1,5 @@
 import Nav from './Nav';
-import SocialMediaLinks from './components/SocialMediaLinks';
+import SocialMediaLinks from './SocialMediaLinks';
 
 import './Footer.css';
 

@@ -9,9 +9,14 @@
   --primary-font-family: "Markazi Text", serif;
   --secondary-font-family: "Karla", serif;
 
-  --header-height: 60px;  
-  --body-top-margin: 75px;
+  --menu-height: 75px;
   --default-border-radius: 16px;
+}
+
+@media (max-width: 991.98px) {
+  :root {
+    --menu-height: 60px;
+  }
 }
 
 /* Title */
@@ -64,7 +69,7 @@ p {
 }
 
 body {
-  margin-top: var(--body-top-margin);
+  margin-top: var(--menu-height);
   height: 100%;
 }
 
