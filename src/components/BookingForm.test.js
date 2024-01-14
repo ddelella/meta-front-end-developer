@@ -1,5 +1,6 @@
 import { render, screen, cleanup, fireEvent, waitFor } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
+import "@testing-library/jest-dom";
 import BookingForm from './BookingForm';
 
 const availableTimes = ["10:00","11:00","12:00"];
